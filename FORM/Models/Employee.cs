@@ -12,7 +12,10 @@
 
         public int Salary { get; set; }
         //Add Radio button
-        public string Married { get; set; }
+        
+        //public string Married { get; set; }
+        
+
         //Add textbox
         public string Description { get; set; }
     }

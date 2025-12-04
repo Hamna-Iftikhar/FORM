@@ -5,18 +5,25 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome to Form submission page</h1>
-    
+
 </div>
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
             <form  class="d-grid"  asp-action="Index" asp-controller="Home" method="post">
                 <label asp-for="Name">Enter Name:</label>
-                <input asp-for="Name" placeholder="Enter Name" class="form-control"/>
+                <input asp-for="Name" placeholder="Enter Name" class="form-control" autocomplete="Name"/>
                 <br/>
-                <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()">
-                <option value="">Select Option</option>
+                <label asp-for="Gender" class="form-label">Gender</label>
+                <select asp-for="Gender"
+                        class="form-control"
+                        asp-items="Html.GetEnumSelectList<Gender>()">
+                    <option value="">Select Option</option>
                 </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+                @* <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()"> 
+                <option value="">Select Option</option>
+                </select> *@
                 <br />
                 <input asp-for="Age" placeholder="Enter Age" class="form-control" />
                 <br />
@@ -24,22 +31,17 @@
                 <br />
                 <input asp-for="Salary" placeholder="Enter Salary" class="form-control" />
                 <br/>
-                <label>
-                    Married:
-                    </label>
+                @*<label asp-for="Married">Married:</label>
                 <div class="form-check">
-  <input class="form-check-input" type="radio" asp-for="Married" value="YES">
-  <label class="form-check-label" for="flexRadioDefault1">
-    YES
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" asp-for="Married" value="NO">
-  <label class="form-check-label" for="flexRadioDefault2">
-    NO
-  </label>
-</div>
-<br/>
+                    <input id="YES" class="form-check-input" type="radio" asp-for="Married" value="YES">
+                    <label class="form-check-label" for="flexRadioDefault2">YES</label>
+                </div>
+                <div class="form-check">
+                    <input id="NO" class="form-check-input" type="radio" asp-for="Married" value="NO">
+                    <label class="form-check-label" for="flexRadioDefault2">NO</label>
+                </div>*@
+
+                <br/>
 <textarea asp-for="Description" class="form-control" placeholder="Enter Description" rows="5">
 
 </textarea>
@@ -53,3 +55,4 @@
     </div>
 
 </div>
+

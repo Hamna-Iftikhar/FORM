@@ -14,16 +14,16 @@ namespace FORM.Controllers
         {
             _logger = logger;
         }
-        [Route("")]
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        public  String Index(Employee e)
+        public  string Index(Employee e)
         {
-            return "Name:" + e.Name + "Gender:" + e.Gender + "Age:" + e.Age + "Designation" + e.Designation + "Salary:" + e.Salary + "Married" + e.Married + "Description" + e.Description;
+            return "Name:" + e.Name + "Gender:" + e.Gender + "Age:" + e.Age + "Designation" + e.Designation + "Salary:" + e.Salary  + "Description" + e.Description;
         }
         public IActionResult Privacy()
         {
